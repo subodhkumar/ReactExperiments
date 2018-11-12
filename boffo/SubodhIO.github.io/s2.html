@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <button onclick="gen()"> Generate </button>
+        </div>
+     <div id="number">
+         
+     </div>
+     <script>
+         var playersArray = [
+        {
+            "id": 1,
+            "First Name": "Srikanth",
+            "Last name": "Akkapu"
+        },
+        {
+            "id": 3,
+            "First Name": "SCP Ranga Rao ",
+            "Last name": "Sanka"
+        },
+        {
+            "id": 4,
+            "First Name": "Purna Sahithi",
+            "Last name": "Adduri"
+        },
+        {
+            "id": 5,
+            "First Name": "Meher Charit",
+            "Last name": "Immadi"
+        },
+        {
+            "id": 6,
+            "First Name": "Anusha ",
+            "Last name": "Nandepeta"
+        },
+        {
+            "id": 7,
+            "First Name": "Samarth Rao",
+            "Last name": "Akundi"
+        },
+        {
+            "id": 8,
+            "First Name": "Venkatesh",
+            "Last name": "Vasam"
+        },
+        {
+            "id": 9,
+            "First Name": "Divyasri ",
+            "Last name": "Vanteddu"
+        },
+        {
+            "id": 10,
+            "First Name": "Bharath Raj ",
+            "Last name": "Pathi"
+        },
+        {
+            "id": 12,
+            "First Name": " Raviteja",
+            "Last name": "Vibhuti"
+        },
+        {
+            "id": 14,
+            "First Name": "Subodh Kumar ",
+            "Last name": "ES"
+        },
+        {
+            "id": 16,
+            "First Name": "Krishna Sowjanya ",
+            "Last name": "Koduri"
+        },
+        {
+            "id": 17,
+            "First Name": "Spandana",
+            "Last name": "Mogula "
+        },
+        {
+            "id": 18,
+            "First Name": "Siri ",
+            "Last name": "Sunkara"
+        },
+        {
+            "id": 19,
+            "First Name": "LAKSHMI DHARANI",
+            "Last name": "UPPU"
+        },
+        {
+            "id": 20,
+            "First Name": "Rahul ",
+            "Last name": "Chavan"
+        },
+        {
+            "id": 21,
+            "First Name": "Vishnu Preethi",
+            "Last name": "Tathvam"
+        },
+        {
+            "id": 22,
+            "First Name": "Kapil ",
+            "Last name": "Mittal"
+        },
+        {
+            "id": 24,
+            "First Name": "Jaisooria Balakrishnan",
+            "Last name": "Kalpatta"
+        },
+        {
+            "id": 25,
+            "First Name": "Kushal Reddy",
+            "Last name": "Appidi "
+        },
+        {
+            "id": 26,
+            "First Name": "Saisiddartha",
+            "Last name": "Warangal "
+        },
+        {
+            "id": 27,
+            "First Name": "Sai Sri Ram",
+            "Last name": "Kattunga"
+        },
+        {
+            "id": 28,
+            "First Name": "Alekhya ",
+            "Last name": "Amand"
+        },
+        {
+            "id": 29,
+            "First Name": "Alekhya",
+            "Last name": "Kona "
+        }
+    ];
+
+    var tasksArray = [
+        {
+            "Task Id": 1,
+            "Task Desc": "STATUE GAME |  Selected Person will remain like statute for certain time limit.Other staff members should disturb him like ,by cracking jokes .Selected person should not get disturbed for 60sec. If disturbed it will continue for 60sec"
+        },
+        {
+            "Task Id": 2,
+            "Task Desc": "IMITATE THE OTHER STAFF MEMBER\n"
+        },
+        {
+            "Task Id": 3,
+            "Task Desc": "BALANCING TT BALL ON A  SPOON and roam across office"
+        },
+        {
+            "Task Id": 4,
+            "Task Desc": "Make a prank call to sreena"
+        },
+        {
+            "Task Id": 5,
+            "Task Desc": "Recite the Tongue twister for 10 times: Can you can a can as a canner can can a can\n"
+        },
+        {
+            "Task Id": 6,
+            "Task Desc": "Say the alphabet backwards in 30 seconds."
+        },
+        {
+            "Task Id": 7,
+            "Task Desc": "Fill water bottle by placing it on your table using 20 coffee cup's ( one at a time)."
+        },
+        {
+            "Task Id": 8,
+            "Task Desc": "Should Propose a person of same gender whom you like In front of all."
+        },
+        {
+            "Task Id": 9,
+            "Task Desc": "Should sing any song in front of all."
+        },
+        {
+            "Task Id": 10,
+            "Task Desc": "Should imitate any actor and need to act and deliver a dialog like that actor."
+        },
+        {
+            "Task Id": 11,
+            "Task Desc": "Need to bring a chocolate to all the people in the office, its small or big not a matter. "
+        },
+        {
+            "Task Id": 12,
+            "Task Desc": "Should cover office by walking backwardly 5 times"
+        },
+        {
+            "Task Id": 13,
+            "Task Desc": "Play TT wihtout the ball being dropped 100 times"
+        },
+        {
+            "Task Id": 14,
+            "Task Desc": "Play ball in the basket with TT  kit for a distance of 5meters"
+        },
+        {
+            "Task Id": 15,
+            "Task Desc": "Crack any joke in Hindi"
+        },
+        {
+            "Task Id": 16,
+            "Task Desc": "BalaKrishna dialogue"
+        },
+        {
+            "Task Id": 17,
+            "Task Desc": "Roll on your chair from one end to another.\n"
+        },
+        {
+            "Task Id": 18,
+            "Task Desc": "Wish everyone for every task you do. Mail before you got to the cafeteria. Mail before you are leaving the seat or explaining something to anyone till you go home for the day"
+        },
+        {
+            "Task Id": 19,
+            "Task Desc": "Play your fav music on your laptop on full volume fro 60 secs"
+        },
+        {
+            "Task Id": 20,
+            "Task Desc": "Try to juggle two bottles together for 60 secs"
+        },
+        {
+            "Task Id": 21,
+            "Task Desc": "Write some funny name like Idiot on paper cap, the person has to wear that cap and go to every one, and every one has to say \"Person\" + name, ex, \"Raju Idiot\""
+        },
+        {
+            "Task Id": 22,
+            "Task Desc": ".Person has to say only to words \"YES I AM/ No I AM\" so the others can ask him some tricky questions like \"You are too lazy\" | 10QUESTIONS"
+        },
+        {
+            "Task Id": 23,
+            "Task Desc": "Make a call to 5 different friends using your left hand in a minute(ask 5 friends names before announcing of task)"
+        },
+        {
+            "Task Id": 24,
+            "Task Desc": "say your own Full name in reverse order 3 times"
+        },
+        {
+            "Task Id": 25,
+            "Task Desc": "The person should Hum a song with water in mouth and others should find the song"
+        },
+        {
+            "Task Id": 26,
+            "Task Desc": "The person should Go to office security and tell Good night ,sweet dreams in day time"
+        },
+        {
+            "Task Id": 27,
+            "Task Desc": "The person should Speak in (Any actor / actress) slang to team people whole day"
+        },
+        {
+            "Task Id": 28,
+            "Task Desc": "The person should Make three animal sounds."
+        },
+        {
+            "Task Id": 29,
+            "Task Desc": "The person should tell at least 15 colleagues nickname"
+        },
+        {
+            "Task Id": 30,
+            "Task Desc": "The person should tell all the colleagues names in an alphabetical order. If he misses any he should start from the beginning."
+        },
+        {
+            "Task Id": 31,
+            "Task Desc": "The person should tell their bio-data only in Telugu language without using any other language words."
+        },
+        {
+            "Task Id": 32,
+            "Task Desc": "The person should describe each colleague in a single word.\n"
+        },
+        {
+            "Task Id": 33,
+            "Task Desc": "get 75 sugar crystals from Cafeteria."
+        },
+        {
+            "Task Id": 34,
+            "Task Desc": "try to Hold Single plate with your left little finger."
+        },
+        {
+            "Task Id": 35,
+            "Task Desc": "Should say 10 super hero's names in 30 sec's"
+        },
+        {
+            "Task Id": 36,
+            "Task Desc": "Say this Tongue twister(How can a clam cram in a clean cream can?) 5 times."
+        },
+        {
+            "Task Id": 37,
+            "Task Desc": ".Do 10 sit-ups in 20 seconds."
+        },
+        {
+            "Task Id": 38,
+            "Task Desc": "Talk only in pure Telugu for one minute."
+        },
+        {
+            "Task Id": 39,
+            "Task Desc": "Give a slap(slowly) | GUESS UR SANTA SLAP 5 TIMES ELSE GET ONE FOR EVERY WRONG GUESS | 60 SECS"
+        },
+        {
+            "Task Id": 40,
+            "Task Desc": "Blind Drawing :draw the santha drawing in 1 minute"
+        }
+    ];
+
+         function gen() {
+               console.log('****Player | ' + Math.ceil(Math.random()*playersArray.length)); 
+               console.log('**** Task | ' + Math.ceil(Math.random()*tasksArray.length)); 
+         }
+     </script>
+    </body>
+</html>

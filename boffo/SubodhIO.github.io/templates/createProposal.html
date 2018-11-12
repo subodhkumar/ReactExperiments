@@ -1,0 +1,24 @@
+<style>
+
+</style>
+<div class="bg-icon">
+    <i class="material-icons md-bg">pan_tool</i>
+</div>
+<div ng-controller="createProposalController">
+    <div class="page-title">
+        New Proposal
+    </div>
+
+    <div class="page-content">
+        <b-input label="'Proposal Name'" ng-model="newProposal.name"></b-input>
+        <b-input label="'Proposal Description'" ng-model="newProposal.description"></b-input>
+        <b-input label="'Proposal Options'" ng-model="newProposal.optionStr"></b-input>
+    </div>
+    <div class="page-action">
+        <div class="btn-b btn-b-success" ng-click="addProposal()">Add</div>
+        <div class="btn-b btn-b-error" ng-click="cancelProposal()">Cancel</div>
+    </div>
+
+
+
+</div>
