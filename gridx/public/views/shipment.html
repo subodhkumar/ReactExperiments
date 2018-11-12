@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    .container {
+      padding: 20px 20px;
+    }
+
+    .header {
+      display: grid;
+      grid-template-rows: 50px;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 35px;
+    }
+
+    .ShipmentList {
+      display: grid;
+      grid-row-gap: 10px;
+    }
+
+    .shipment {
+      display: grid;
+      grid-template-rows: 40px 1fr;
+      border: 1px solid #eee;
+      padding: 1em;
+      border-radius: 3px;
+    }
+
+    .open {
+      height: 60vh;
+    }
+
+    .tabItem {
+      font-weight: bold;
+    }
+  </style>
+  <div class="container">
+    <div class="header"> Cloudio Shipment Solution</div>
+    <div class="tabs">
+      <div class="tabItem">To be shipped</div>
+      <div class="tabItem">All</div>
+      <div class="tabItem">History</div>
+    </div>
+    <div class="ShipmentList">
+      <div class="shipment open">
+        <div class="summary">
+          Shipment
+        </div>
+        <div class="details">
+          shipment detail
+        </div>
+      </div>
+      <div class="shipment">
+        <div class="summary">
+          Shipment
+        </div>
+        <div class="details">
+          shipment detail
+        </div>
+      </div>
+      <div class="shipment">
+        <div class="summary">
+          Shipment
+        </div>
+        <div class="details">
+          shipment detail
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="/scripts/boffo.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Oswald:400,500,600,700');
+
+    body {
+        background: #424242;
+        font-family: 'Oswald', sans-serif;
+        color: #fff;
+    }
+
+    .mainContainer {
+        height: 98vh;
+        padding-top: 2vh;
+        display: grid;
+        grid-auto-rows: 18%;
+        grid-gap: 10px;
+        justify-items: center;
+        align-items: center;
+    }
+
+
+    .subMainContainer {
+       height: 98vh;
+    padding-top: 2vh;
+    display: grid;
+    grid-auto-rows: 18%;
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    }
+
+    .elementContainer {
+        height: 98vh;
+        padding-top: 2vh;
+        display: grid;
+        grid-auto-rows: 98%;
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    }
+
+    .subMainContainer>div{
+       background: #efefef;
+       height: 100%;
+       width: 90%;
+       color: #000;
+       
+    }
+     .elementContainer>div{
+       background: #ddd;
+       height: 100%;
+       width: 90%;
+       color: #000;
+       
+    }
+    
+    .sectionDiv {
+        display: grid;
+        width: 90%;
+        height: 100%;
+        background: #aaa;
+        box-sizing: content-box;
+        box-shadow: 0px 4px 14px -2px #000;
+        color: #fff;
+        justify-items: center;
+        align-items: center;
+    }
+
+    #userDiv {
+        font-size: 6vw;
+    }
+
+    #eventDiv {
+        background: #9C27B0;
+    }
+
+    #queryDiv {
+        background: rgba(211, 84, 0, 1.0);
+    }
+
+    #pollDiv {
+        background: #4CAF50;
+    }
+
+    #proposalDiv {
+        background: #2196F3;
+    }
+
+    .sectionContent {
+        font-size: 8vw;
+    }
+</style>
+
+<body ng-app="boffo">
+
+
+    <div class="elementContainer">
+        <div>item 1 {{1+2}}</div>
+    </div>
+    <div class="subMainContainer">
+
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 5</div>
+       
+
+    </div>
+
+    <div class="mainContainer">
+        <div class="" id="userDiv">
+            <div>
+                Subodh Kumar
+            </div>
+        </div>
+        <div class="sectionDiv" id="eventDiv">
+            <div class="sectionContent">
+                Events
+            </div>
+
+        </div>
+        <div class="sectionDiv" id="pollDiv">
+            <div class="sectionContent">
+                Polls
+            </div>
+        </div>
+
+        <div class="sectionDiv" id="queryDiv">
+            <div class="sectionContent">
+                Queries
+            </div>
+        </div>
+
+        <div class="sectionDiv" id="proposalDiv">
+            <div class="sectionContent">
+                Proposals
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

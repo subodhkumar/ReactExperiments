@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CloudIO</title>
+</head>
+
+<style>
+  /* TBD*/
+
+  .header {
+    POSITION: absolute;
+    top: 0;
+    left: 0;
+    height: 70px;
+    background: blue;
+    width: 100%;
+  }
+
+  /* TBD*/
+</style>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700');
+  body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+  }
+
+  .es_section {
+    top: 0;
+    left: 0;
+    position: absolute;
+    left: 0vw;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    display: grid;
+    align-content: center;
+    /* justify-items: center; */
+    grid-gap: 50px;
+    padding: 50px;
+    color: white;
+    transition: 1s ease-in;
+    opacity: 0;
+    box-sizing: border-box;
+    color: #464646;
+    border-radius: 5px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+  }
+
+
+  .container {}
+
+  .es_section-left-in {
+    /* left: -100vw; */
+    transition: 1s ease-in;
+    opacity: 0;
+  }
+
+  .es_section-left {
+    /* left: 0vw; */
+    transition: 1s ease-in;
+    opacity: 1;
+  }
+
+
+  #es_section1 {
+    background-image: url(/appimages/h11.jpg);
+  }
+
+  #es_section11 {
+    background-image: url(/appimages/h12.jpg);
+  }
+
+  #es_section2 {
+    background-image: url(/appimages/h22.jpg);
+  }
+
+  #es_section21 {
+    background-image: url(/appimages/h21.jpg);
+  }
+
+  #es_section3 {
+    background-image: url(/appimages/h31.jpg);
+  }
+
+  #es_section31 {
+    background-image: url(/appimages/h32.jpg);
+  }
+
+  #es_section4 {
+    background-image: url(/appimages/t11.jpg);
+  }
+
+  #es_section41 {
+    background-image: url(/appimages/t12.jpg);
+  }
+
+
+
+  .divGradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, .9), rgba(255, 255, 255, .1), rgba(255, 255, 255, .0));
+    background: linear-gradient(to right, #fff, rgba(255, 255, 255, .9), rgba(255, 255, 255, .1), rgba(255, 255, 255, .0));
+  }
+
+  div#htext1 {
+    font-size: 4em;
+    /* font-weight: bold; */
+    /* color: rgba(0, 116, 237, 1); */
+    margin: 20px 0px;
+  }
+
+  div#htext2 {
+    font-size: 2em;
+    /* background: rgba(0, 116, 237, .9); */
+    color: #0074ED;
+    width: fit-content;
+    /* padding: 2px 8px; */
+    margin-top: 10px;
+    text-transform: uppercase
+    /* font-weight: bold; */
+    /* border-bottom: solid; */
+  }
+
+  span.highlight {
+    color: rgba(0, 116, 237, 1);
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+
+
+
+  .headerText>div:nth-child(3) {
+    font-size: 1.5em;
+    margin-top: 15px;
+  }
+
+  .headerText {
+    z-index: 2;
+    width: 50%;
+  }
+
+
+
+  .statsDiv {
+    background: rgba(255, 255, 255, .85);
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 0px 3px 3px 0px;
+    border-left: 1px solid rgba(0, 116, 237, .9);
+    box-shadow: 0px 1px 8px -3px rgba(0, 116, 237, .9)
+  }
+
+  .statsDiv2 {
+    background: rgba(255, 255, 255, .65);
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 65px 1fr;
+    align-items: center;
+    grid-gap: 10px;
+    box-shadow: 0px 1px 8px -3px rgba(0, 116, 237, .9);
+  }
+
+  .statsSection {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    width: 100%;
+
+    border-radius: 3px;
+    /* padding: 10px; */
+    box-sizing: border-box;
+
+  }
+
+  .statContentHome {
+    display: grid;
+    /* grid-template-columns: 1fr 2fr; */
+    grid-gap: 15px;
+    align-items: center;
+    /* margin-top: 10px; */
+  }
+
+  .statsSection2 {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    width: 100%;
+  }
+
+  .statDigit {
+    font-size: 5em;
+    color: rgba(0, 116, 237, 1);
+  }
+
+  .statDigit img {
+    max-height: 35px;
+  }
+
+  .statHeader {
+    font-size: 2em;
+    color: rgba(0, 116, 237, 1);
+  }
+
+  .statText {
+    font-size: 1.25em;
+  }
+
+  /* ----------- Non-Retina Screens ----------- */
+
+  @media all and (min-width: 1200px) {
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1vh;
+      width: 100vw;
+
+      /* background: blue; */
+    }
+    .es_section {}
+  }
+
+  @media all and (max-width: 1200px) and (min-width: 900px) {
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1vh;
+      width: 100vw;
+
+      /* background: red; */
+    }
+
+    .es_section {
+
+
+      grid-gap: 20px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right;
+    }
+
+  }
+
+
+  @media all and (max-width: 900px) and (min-width: 600px) {
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1vw;
+      width: 100vw;
+
+      /* background: green; */
+    }
+    .es_section {
+
+      grid-gap: 20px;
+      padding: 30px;
+      align-content: end;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right;
+    }
+    .statsSection,
+    .statsSection2 {
+      width: 100%;
+    }
+    .headerText {
+      width: 100%;
+    }
+    .divGradient {
+      background: #fff;
+      background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, .9), rgba(255, 255, 255, .1), rgba(255, 255, 255, .0));
+      background: linear-gradient(to right top, #fff, rgba(255, 255, 255, .9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, .0));
+    }
+
+
+  }
+
+  @media all and (max-width: 600px) and (min-width: 300px) {
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.25vw;
+      width: 100vw;
+
+      /* background: lime; */
+    }
+    .es_section {
+
+
+      grid-gap: 10px;
+      padding: 10px;
+      align-content: end;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right;
+    }
+    .statContentHome {
+      grid-gap: 5px;
+      /* margin-top: 10px; */
+    }
+    .statsSection,
+    .statsSection2 {
+      grid-template-columns: 1fr;
+      width: 100%;
+      grid-gap: 5px;
+    }
+
+    .headerText {
+      width: 100%;
+    }
+    .divGradient {
+      background: #fff;
+      background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, .9), rgba(255, 255, 255, .1), rgba(255, 255, 255, .0));
+      background: linear-gradient(to top, #fff, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.55), rgba(255, 255, 255, .0)), linear-gradient(to bottom right, #fff, rgba(255, 255, 255, .7), rgba(255, 255, 255, .1), rgba(255, 255, 255, 0));
+    }
+    #es_section1,
+    #es_section11 {
+      background-position: 80%;
+    }
+
+    #es_section2,
+    #es_section21 {
+      background-position: 60%;
+    }
+    #es_section3,
+    #es_section31,
+    #es_section4,
+    #es_section41 {
+      background-position: 75%;
+    }
+
+  }
+
+  @media all and (max-width: 300px) {
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.25vw;
+      width: 100vw;
+
+      /* background: palevioletred; */
+    }
+    .es_section {
+
+      grid-gap: 10px;
+      padding: 10px;
+      align-content: end;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right;
+    }
+    .statsSection,
+    .statsSection2 {
+      grid-template-columns: 1fr;
+      width: 100%;
+      grid-gap: 5px;
+    }
+    .headerText {
+      width: 100%;
+    }
+    .divGradient {
+      background: #fff;
+      background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, .9), rgba(255, 255, 255, .1), rgba(255, 255, 255, .0));
+      background: linear-gradient(to top, #fff, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.55), rgba(255, 255, 255, .0)), linear-gradient(to bottom right, #fff, rgba(255, 255, 255, .7), rgba(255, 255, 255, .1), rgba(255, 255, 255, 0));
+    }
+    .statContentHome {
+      grid-gap: 5px;
+      /* margin-top: 10px; */
+    }
+    #es_section1,
+    #es_section11 {
+      background-position: 80%;
+    }
+
+    #es_section2,
+    #es_section21 {
+      background-position: 60%;
+    }
+    #es_section3,
+    #es_section31,
+    #es_section4,
+    #es_section41 {
+      background-position: 75%;
+    }
+  }
+
+  @media all and (min-height: 350px) and (max-height: 450px) and (min-width: 600px) {
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.3vh;
+      width: 100vw;
+
+      /* background: yellow; */
+    }
+
+    .es_section {
+      background-position-y: 20%;
+    }
+
+    div#htext1 {
+      margin: 5px 0px;
+    }
+    .headerText>div:nth-child(3) {
+      margin-top: 5px;
+    }
+    .statContentHome {
+      grid-gap: 5px;
+    }
+    .statDigit img {
+      max-height: 5vh;
+    }
+
+  }
+
+  @media all and (min-height: 350px) and (max-height: 450px) and (max-width: 600px) {
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1vh;
+      width: 100vw;
+
+      /* background: purple; */
+    }
+
+    .es_section {
+      background-position-y: 20%;
+    }
+
+    div#htext1 {
+      margin: 5px 0px;
+    }
+    .headerText>div:nth-child(3) {
+      margin-top: 5px;
+    }
+    .statContentHome {
+      grid-gap: 1px;
+    }
+    .statDigit img {
+      max-height: 5vh;
+    }
+
+    .statsDiv {
+      padding: 5px 10px;
+    }
+  }
+
+  @media all and (max-height: 350px) and (max-width: 600px) {
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.1vh;
+      width: 100vw;
+
+      /* background: palegreen; */
+    }
+
+    .es_section {
+      background-position-y: 20%;
+    }
+
+    div#htext1 {
+      margin: 5px 0px;
+    }
+    .headerText>div:nth-child(3) {
+      margin-top: 5px;
+    }
+    .statContentHome {
+      grid-gap: 1px;
+    }
+    .statDigit img {
+      max-height: 5vh;
+    }
+
+    .statsDiv {
+      padding: 5px 10px;
+    }
+  }
+
+  @media all and (max-height: 350px) and (min-width: 600px) {
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.3vh;
+      width: 100vw;
+
+      /* background: orchid; */
+    }
+
+    .es_section {
+      background-position-y: 20%;
+    }
+
+    div#htext1 {
+      margin: 5px 0px;
+    }
+    .headerText>div:nth-child(3) {
+      margin-top: 5px;
+    }
+    .statContentHome {
+      grid-gap: 5px;
+    }
+    .statDigit img {
+      max-height: 5vh;
+    }
+
+  }
+
+  .es_header {
+    position: relative;
+    height: 50vh;
+    /* background: red; */
+  }
+
+  .es_content {
+    margin-top: .5vh;
+    position: relative;
+    padding: .5vh .5vw;
+
+    box-sizing: border-box;
+  }
+
+  .es_rest {
+    margin-top: .5vh;
+    position: relative;
+    /* background: purple */
+  }
+
+  .es_stats {
+    transform: scaleY(0);
+    opacity: 0;
+    transition: .25s ease-in;
+    transition-delay: .2s;
+  }
+
+  .es_stats_show {
+    transform: scaleY(1);
+    opacity: 1;
+    transition: .5s ease-in;
+    transition-delay: .5s;
+    ;
+  }
+</style>
+
+<body onload="start(true)">
+
+
+  <div class="es_header">
+
+    <div class="es_section es_section-left" id="es_section2">
+      <div class="divGradient">
+      </div>
+      <div class="headerText">
+        <div id="htext2"> Stay ahead of the curve </div>
+        <div id="htext1"> Build smart enterprise applications with speed and ease</div>
+        <div id="htext3"> Low code and ZERO-FOOTPRINT development platform using modern technology for
+
+          <span class="highlight">Oracle Cloud </span> and
+          <span class="highlight">Oracle EBS </span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="es_section " id="es_section4">
+      <div class="divGradient">
+      </div>
+      <div class="headerText">
+        <div id="htext2"> Powerup your enterprise
+        </div>
+        <div id="htext1"> Apps that Drive business value
+        </div>
+
+        <div id="htext3"> Pre-built solutions for Oracle EBS to deliver incredible benefits in
+          <span class="highlight">Business Agility </span> and
+          <span class="highlight">Process Optimization </span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="es_content">
+    <div class="statsSection es_stats ">
+      <div class="statsDiv">
+        <div class="statDigit">10x</div>
+
+        <div class="statContentHome">
+          <div class="statHeader">Accelerated development </div>
+          <div class="statText">Foster innovation & deliver quality solutions at a rapid pace, respond to changes for increased efficiency </div>
+        </div>
+
+
+      </div>
+      <div class="statsDiv">
+        <div class="statDigit">50%</div>
+
+        <div class="statContentHome">
+          <div class="statHeader">Lower cost</div>
+          <div class="statText">Significantly reduce time and cost to deliver applications that leverage investment in Enterprise systems</div>
+        </div>
+
+
+      </div>
+      <div class="statsDiv">
+        <div class="statDigit">5x</div>
+
+        <div class="statContentHome">
+          <div class="statHeader">Transform UX
+          </div>
+
+          <div class="statText">Enhance the user experience to create memorable engagement journeys
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="statsSection2 es_stats es_stats_show">
+      <div class="statsDiv2">
+
+        <div class="statDigit">
+          <img src="/appimages/sc1.svg">
+        </div>
+        <div class="statContent">
+          <div class="statHeader">Supplier Connect </div>
+          <div class="statText">Supplier self service and process automation that improves accuracy and efficiency
+          </div>
+        </div>
+
+
+      </div>
+      <div class="statsDiv2">
+
+        <div class="statDigit">
+          <img src="/appimages/ds1.svg">
+        </div>
+        <div class="statContent">
+          <div class="statHeader">DataSense </div>
+          <div class="statText">Supplier self service and process automation that improves accuracy and efficiency
+          </div>
+        </div>
+
+
+      </div>
+      <div class="statsDiv2">
+
+        <div class="statDigit">
+          <img src="/appimages/sx1.svg">
+        </div>
+        <div class="statContent">
+          <div class="statHeader">ShipEx</div>
+          <div class="statText">Supplier self service and process automation that improves accuracy and efficiency
+          </div>
+        </div>
+
+
+      </div>
+      <div class="statsDiv2">
+
+        <div class="statDigit">
+          <img src="/appimages/fsa2.svg">
+        </div>
+        <div class="statContent">
+          <div class="statHeader">Field Force </div>
+          <div class="statText">Supplier self service and process automation that improves accuracy and efficiency
+          </div>
+        </div>
+
+
+      </div>
+      <div class="statsDiv2">
+
+        <div class="statDigit">
+          <img src="/appimages/cwc2.svg">
+        </div>
+        <div class="statContent">
+          <div class="statHeader">Customer Work Center </div>
+          <div class="statText">Supplier self service and process automation that improves accuracy and efficiency
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+  <div class="es_rest"> rest</div>
+
+
+
+
+</body>
+<script type="text/javascript">
+
+  function start() {
+    // return;
+    const elArr = document.getElementsByClassName("es_section");
+    const statsArr = document.getElementsByClassName("es_stats");
+
+    let counter = 1;
+    let max = elArr.length;
+    console.log(counter, "/", max);
+    if (max === 0) {
+      return;
+    }
+
+    setInterval(function () {
+      if (counter === max) {
+        counter = 0;
+        elArr[max - 1].classList.remove("es_section-left");
+        elArr[max - 1].classList.add("es_section-left-in");
+        elArr[max - 2].classList.remove("es_section-left-in");
+        statsArr[max - 1].classList.remove("es_stats_show");
+      }
+
+      if (counter > 1) {
+        elArr[counter - 2].classList.remove("es_section-left-in");
+      }
+
+      if (counter > 0) {
+        elArr[max - 1].classList.remove("es_section-left-in");
+        elArr[counter - 1].classList.add("es_section-left-in");
+        elArr[counter - 1].classList.remove("es_section-left");
+        statsArr[counter - 1].classList.remove("es_stats_show");
+      }
+
+      elArr[counter % max].classList.add("es_section-left");
+      statsArr[counter % max].classList.add("es_stats_show");
+      counter++;
+    }, 2500);
+  }
+
+
+</script>
+
+</html>

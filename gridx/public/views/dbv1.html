@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard v1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet">
+</head>
+<style>
+    body {
+        background: #eee;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    .material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+    .panel {
+        background: #fff;
+    }
+
+    .container {
+        
+        padding: 5px;
+    }
+
+.sideBar{
+       position: absolute;
+        height: 100vh;
+        top:0px;
+        width: 250px;
+        min-width: 150px;
+        
+        overflow-y: scroll;
+}
+    .sideBarLeft {
+        left: 0px;
+ background: #42c3f7;
+ color: #fff;
+ 
+    }
+   .sideBarRight {
+    right: 0px;
+    background: #ddd;
+    width: 350px;
+}
+.headerBar {
+    background: #fff;
+    height: 70px;
+    position: fixed;
+    top: 0px;
+    left: 250px;
+   width: calc(100% - 250px);
+}
+
+.col-4 {
+    display: grid;
+    width: calc(100% - 350px);
+    grid-template-columns: 25% 25% 25% 25%;
+    
+}
+
+.navBar {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border: 1px solid #aaa;
+}
+</style>
+
+<body>
+
+    <div class="navBar">
+      <div class="navLogo">Logo</div>
+      <div class="navOptions">Options</div>
+    </div>
+    <div class="container">
+        
+    </div>
+
+</body>
+
+</html>

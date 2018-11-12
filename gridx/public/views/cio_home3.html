@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Oswald');
+  @import url('https://fonts.googleapis.com/css?family=Quattrocento:400,700');
+  body {
+
+    margin: 0;
+    /* background-image: url('/appimages/h1.jpg'); */
+    background-color: #eee;
+    /* background-color: #464646; */
+    /* background-color: #0074ED; */
+    /* background-blend-mode: soft-light; */
+  }
+
+  .es_navbar {
+    position: sticky;
+    top: 0vh;
+    width: 100%;
+    /* background: #0074ED; */
+    background: #eee;
+    /* background-color: #464646; */
+    background-size: cover;
+    min-height: 10vh;
+    padding-top: 1vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1vw;
+    box-sizing: border-box;
+    padding-bottom: 1vh;
+    z-index: 99;
+  }
+
+  .es_container {
+    width: 90vw;
+    margin: auto;
+    font-size: 14px;
+    font-family: 'Quattrocento', serif;
+  }
+
+  .es_header_text {
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.1;
+  }
+
+
+  .es_section {
+    margin: 5vh 0;
+    min-height: 4px;
+    width: 100%;
+    background: #eee;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+  }
+
+  .es_card {
+    background: #eee;
+    /* background: #fff; */
+    overflow: scroll;
+    padding: 1vh 1vw;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  .es_card_white {
+    background: #fff;
+  }
+
+  .es_text_blue {
+    color: #0074ED;
+  }
+
+  .es_text_white {
+    color: #fff;
+  }
+
+  .es_main_section {
+    margin-top: 1vh;
+    background: transparent;
+
+    min-height: 60vh;
+
+    align-content: end;
+    display: grid;
+
+  }
+
+  @keyframes es_msc2_animation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      margin-top: -20vh;
+      opacity: 0;
+    }
+    95% {
+      margin-top: -20vh;
+      opacity: 0;
+    }
+  }
+
+  .es_main_section.es_hide {
+    margin-top: -65vh;
+  }
+
+  #es_ms_1 {
+    background-image: url('appimages/h1.jpg');
+    background-size: cover;
+    /* background-color: #0074ED; */
+    background-color: #eee;
+    background-blend-mode: luminosity;
+    background-position: right;
+    color: #fff;
+  }
+
+  #es_msc_1 {
+    background-image: url('appimages/h2.jpg');
+    background-size: cover;
+    /* background-color: #0074ED; */
+    background-color: #eee;
+    background-blend-mode: luminosity;
+    background-position: right;
+    color: #fff;
+  }
+
+  #es_msc_2 {
+    background-image: url('appimages/t1.jpg');
+    background-size: cover;
+    /* background-color: #0074ED; */
+    background-color: #eee;
+    background-blend-mode: luminosity;
+    background-position: right;
+    color: #fff;
+  }
+
+
+  #es_section_1 {
+    background: transparent;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-auto-rows: 25vh; */
+    grid-column-gap: 1vw;
+    transition: 1s ease-in;
+    /* position: absolute;
+    top: 62vh; */
+  }
+
+  #es_section_1.es_hide {
+    opacity: 0;
+    /* top: 100vh; */
+    transition: 1s ease-out;
+    margin-top: -22vh;
+    /* transform: scaleY(0); */
+    /* transform-origin: top; */
+  }
+
+  #es_section_2.es_hide {
+
+    /* opacity: 0; */
+    /* top: 100vh; */
+    /* margin-top: -40vh; */
+    /* margin-bottom: -16vh; */
+    transition: 1s ease-out;
+    /* animation: es_msc2_animation 2s; */
+    /* transform: scaleY(0); */
+    /* transform-origin: top; */
+  }
+
+  #es_section_2,
+  #es_section_3 {
+    padding: 0;
+  }
+
+  #es_section_2 {
+    background: transparent;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 1vw;
+    grid-row-gap: 1vh;
+    transition: 1s ease-in;
+    /* transition-delay: 1s; */
+    /* position: absolute;
+    top: 62vh; */
+    transform: scaleY(1);
+    /* display: grid; */
+  }
+
+  #es_section_4 {
+    padding: 0;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-column-gap: 1vw;
+    grid-row-gap: 1vh;
+  }
+
+  #es_logo {
+    background-image: url(/appimages/CloudIO_Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  #es_navoption {
+    /* justify-self: right; */
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+
+  #esm_s1,
+  #esm_s2,
+  #esm_s3 {
+    background-color: rgb(0, 0, 0, .5);
+    padding: 1vh;
+    font-size: 1.1em;
+    margin-bottom: 1vh;
+  }
+
+  #esm_s2 {
+    font-size: 4em;
+    line-height: 1.1;
+    background-color: rgb(0, 116, 237, .75)
+  }
+
+  .es_s1_d1 {
+    font-size: 4em;
+  }
+
+  .es_s1_d2 {
+    margin-top: 1vh;
+    font-size: 2em;
+  }
+
+  .es_s1_d3 {
+    margin-top: 1vh;
+  }
+
+  .es_section_header {
+    font-size: 2em;
+    margin-bottom: 1vh;
+  }
+
+  .es_4_header,
+  .es_2_header {
+    font-size: 1.5em;
+    margin-bottom: 1.25vh;
+  }
+
+  .es_main_container {
+    position: relative;
+    min-height: 60vh;
+    padding: 0;
+  }
+
+  .es_msc {
+    min-height: 60vh;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    opacity: 0;
+    transition: 1s ease-out;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+    display: grid;
+    align-content: end;
+  }
+
+  .es_msc.es_show {
+    opacity: 1;
+    transition: 1s ease-in;
+  }
+
+  .es_home_container {
+    background: transparent;
+    height: 85vh;
+    overflow: hidden;
+    padding: 0;
+    margin-top: 0;
+    position: relative;
+  }
+
+  .es_home_section {
+    margin: 2vh 0;
+    max-height: 21vh;
+    min-height: 21vh;
+    overflow: hidden;
+  }
+
+  .es_section_div {
+    height: .5vh;
+    margin: 2vh 0;
+    width: 100%;
+    background-color: #464646;
+  }
+
+  #es_section_6 {
+    margin-bottom: 0px;
+    background-color: #464646;
+    height: 20vh;
+    color: #fff;
+  }
+
+  /* S#*/
+
+  .es_slide_container {
+    POSITION: relative;
+    height: 80vh;
+    /* BORDER: 1PX SOLID #FFF; */
+    overflow: hidden;
+  }
+
+  .es_slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  #es_slide_1 {
+    /* background: red; */
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+    grid-row-gap: 1vh;
+    grid-column-gap: 1vw;
+    /* opacity: .1; */
+    transition: 1s ease-in;
+  }
+
+  #es_slide_2 {
+    transition: 1s ease-in;
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+    grid-row-gap: 1vh;
+    grid-column-gap: 1vw;
+    /* opacity: .1; */
+  }
+
+  #es_slide_1.es_hide {
+    transition: 1s ease-out;
+    opacity: 0;
+  }
+
+  #es_slide_2.es_hide {
+    transition: 1s ease-out;
+    opacity: 0;
+  }
+
+  #es_slide_11 {
+    grid-row: 1 /span 3;
+    background-image: url('appimages/h2.jpg');
+    background-size: cover;
+    /* background-color: #0074ED; */
+    background-color: #eee;
+    background-blend-mode: luminosity;
+    background-position: right;
+    color: #fff;
+    display: grid;
+    align-content: end;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+  }
+
+  #es_slide_21 {
+    grid-row: 1 /span 5;
+    background-image: url('appimages/t1.jpg');
+    background-size: cover;
+    /* background-color: #0074ED; */
+    background-color: #eee;
+    background-blend-mode: luminosity;
+    background-position: right;
+    color: #fff;
+    display: grid;
+    align-content: end;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+  }
+
+  #es_slide_2 {
+    /* background: rgb(102, 51, 153, .2) */
+  }
+
+  div#es_slide_12,
+  div#es_slide_13,
+  div#es_slide_14 {
+    display: grid;
+    align-content: end;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+  }
+
+
+  div#es_slide_22,
+  div#es_slide_23,
+  div#es_slide_24,
+  div#es_slide_25,
+  div#es_slide_26 {
+    display: grid;
+    align-content: end;
+  }
+
+  .es_2_header {
+    font-size: 2em;
+  }
+
+  .es_card_nb {
+    background: transparent;
+    color: #464646;
+  }
+
+  @media all and (max-width: 900px) and (min-width: 600px) {
+    #es_slide_1 {
+      grid-template-columns: 3fr 3fr;
+    }
+
+    #es_slide_2 {
+      grid-template-columns: 3fr 3fr;
+    }
+    #es_slide_11 {
+      background-position-x: 60%;
+    }
+    #es_slide_21 {
+      background-position-x: 60%;
+    }
+
+  }
+
+  @media all and (max-width: 600px) and (min-width: 300px) {
+    #es_slide_1 {
+      grid-template-columns: 3fr 3fr;
+    }
+
+    #es_slide_2 {
+      grid-template-columns: 3fr 3fr;
+    }
+    #es_slide_11 {
+      background-position-x: 60%;
+    }
+    #es_slide_21 {
+      background-position-x: 60%;
+    }
+  }
+
+  @media all and (max-width: 300px) {
+    #es_slide_1 {
+      grid-template-columns: 3fr 3fr;
+    }
+
+    #es_slide_2 {
+      grid-template-columns: 3fr 3fr;
+    }
+    #es_slide_11 {
+      background-position-x: 60%;
+    }
+    #es_slide_21 {
+      background-position-x: 60%;
+    }
+  }
+</style>
+
+
+<body onscroll="start()">
+
+
+  <div class="es_container">
+
+    <div class="es_navbar">
+      <div id="es_logo">
+      </div>
+      <div id="es_navoption" class="es_header_text">
+        <div>Products</div>
+        <div>Blog</div>
+        <div>Career</div>
+        <div>Contact</div>
+
+      </div>
+    </div>
+
+    <div class="es_slide_container">
+      <div class="es_slide es_hide" id="es_slide_1">
+        <div id="es_slide_11">
+
+          <div id="esm_s1">STAY AHEAD OF THE CURVE</div>
+          <div id="esm_s2" class="es_header_text">
+            <span>Build smart enterprise applications with speed and ease</span>
+          </div>
+          <div id="esm_s3"> Low code and ZERO-FOOTPRINT development platform using modern technology for Oracle Cloud and Oracle EBS</div>
+
+        </div>
+        <div id="es_slide_12" class="es_card  es_card_nb">
+          <div class="es_s1_d1 es_header_text es_text_blue">10X</div>
+          <div class="es_s1_d2 es_header_text">Accelerated development
+          </div>
+          <div class="es_s1_d3">Foster innovation & deliver quality solutions at a rapid pace, respond to changes for increased efficiency
+          </div>
+        </div>
+        <div id="es_slide_13" class="es_card  es_card_nb">
+          <div class="es_s1_d1 es_header_text es_text_blue">50%
+          </div>
+          <div class="es_s1_d2 es_header_text">Less Cost
+          </div>
+          <div class="es_s1_d3">Significantly reduce time and cost to deliver applications that leverage investment in Enterprise systems
+          </div>
+
+        </div>
+        <div id="es_slide_14" class="es_card  es_card_nb">
+          <div class="es_s1_d1 es_header_text es_text_blue">5X
+          </div>
+          <div class="es_s1_d2 es_header_text">Transform UX
+          </div>
+          <div class="es_s1_d3">Enhance the user experience to create memorable engagement journeys
+          </div>
+
+        </div>
+      </div>
+      <div class="es_slide " id="es_slide_2">
+        <div id="es_slide_21">
+          <div id="esm_s1">POWERUP YOUR ENTERPRISE
+          </div>
+          <div id="esm_s2" class="es_header_text">
+            <span>Apps that Drive business value
+            </span>
+          </div>
+          <div id="esm_s3"> Pre-built solutions for Oracle EBS to deliver incredible benefits in Business Agility and Process Optimization</div>
+        </div>
+        <div id="es_slide_22">
+          <div class="es_card  es_card_nb">
+            <div class="es_header_text es_text_blue es_2_header">
+              Supplier Connect
+            </div>
+            <div class="">
+              Supplier self service and process automation that improves accuracy and efficiency
+            </div>
+          </div>
+        </div>
+        <div id="es_slide_23">
+          <div class="es_card es_card_nb">
+            <div class="es_header_text es_text_blue es_2_header">
+              DataSense
+            </div>
+            <div class="">
+              Supplier self service and process automation that improves accuracy and efficiency
+            </div>
+          </div>
+        </div>
+        <div id="es_slide_24">
+          <div class="es_card  es_card_nb">
+            <div class="es_header_text es_text_blue es_2_header">
+              ShipEx
+            </div>
+            <div class="">
+              Supplier self service and process automation that improves accuracy and efficiency
+            </div>
+          </div>
+        </div>
+        <div id="es_slide_25">
+          <div class="es_card  es_card_nb">
+            <div class="es_header_text es_text_blue es_2_header">
+              Field Force
+            </div>
+            <div class="">
+              Supplier self service and process automation that improves accuracy and efficiency
+            </div>
+          </div>
+        </div>
+        <div id="es_slide_26">
+          <div class="es_card  es_card_nb">
+            <div class="es_header_text es_text_blue es_2_header">
+              Customer Work Center
+            </div>
+            <div class="">
+              Supplier self service and process automation that improves accuracy and efficiency
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div id="es_ms_1" class="es_section es_main_section">
+      <div id="esm_s1">STAY AHEAD OF THE CURVE</div>
+      <div id="esm_s2" class="es_header_text">
+        <span>Build smart enterprise applications with speed and ease</span>
+      </div>
+      <div id="esm_s3"> Low code and ZERO-FOOTPRINT development platform using modern technology for Oracle Cloud and Oracle EBS</div>
+    </div> -->
+    <!-- <div class="es_home_container es_section">
+      <div id="es_ms_2" class=" es_main_container ">
+        <div class="es_msc es_show" id="es_msc_1">
+          <div id="esm_s1">STAY AHEAD OF THE CURVE</div>
+          <div id="esm_s2" class="es_header_text">
+            <span>Build smart enterprise applications with speed and ease</span>
+          </div>
+          <div id="esm_s3"> Low code and ZERO-FOOTPRINT development platform using modern technology for Oracle Cloud and Oracle EBS</div>
+        </div>
+        <div class="es_msc" id="es_msc_2">
+          <div id="esm_s1">POWERUP YOUR ENTERPRISE
+          </div>
+          <div id="esm_s2" class="es_header_text">
+            <span>Apps that Drive business value
+            </span>
+          </div>
+          <div id="esm_s3"> Pre-built solutions for Oracle EBS to deliver incredible benefits in Business Agility and Process Optimization</div>
+        </div>
+
+      </div>
+      <div id="es_section_1" class="es_home_section">
+        <div class="es_card ">
+          <div class="es_s1_d1 es_header_text es_text_blue">10X</div>
+          <div class="es_s1_d2 es_header_text">Accelerated development
+          </div>
+          <div class="es_s1_d3">Foster innovation & deliver quality solutions at a rapid pace, respond to changes for increased efficiency
+          </div>
+        </div>
+        <div class="es_card ">
+          <div class="es_s1_d1 es_header_text es_text_blue">50%
+          </div>
+          <div class="es_s1_d2 es_header_text">Less Cost
+          </div>
+          <div class="es_s1_d3">Significantly reduce time and cost to deliver applications that leverage investment in Enterprise systems
+          </div>
+
+        </div>
+        <div class="es_card ">
+          <div class="es_s1_d1 es_header_text es_text_blue">5X
+          </div>
+          <div class="es_s1_d2 es_header_text">Transform UX
+          </div>
+          <div class="es_s1_d3">Enhance the user experience to create memorable engagement journeys
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="es_section_2" class="es_home_section es_hide">
+        <div class="es_card ">
+          <div class="es_header_text es_text_blue es_2_header">
+            Supplier Connect
+          </div>
+          <div class="">
+            Supplier self service and process automation that improves accuracy and efficiency
+          </div>
+        </div>
+        <div class="es_card ">
+          <div class="es_header_text es_text_blue es_2_header">
+            DataSense
+          </div>
+          <div class="">
+            Supplier self service and process automation that improves accuracy and efficiency
+          </div>
+        </div>
+        <div class="es_card ">
+          <div class="es_header_text es_text_blue es_2_header">
+            ShipEx
+          </div>
+          <div class="">
+            Supplier self service and process automation that improves accuracy and efficiency
+          </div>
+        </div>
+        <div class="es_card ">
+          <div class="es_header_text es_text_blue es_2_header">
+            Field Force
+          </div>
+          <div class="">
+            Supplier self service and process automation that improves accuracy and efficiency
+          </div>
+        </div>
+        <div class="es_card ">
+          <div class="es_header_text es_text_blue es_2_header">
+            Customer Work Center
+          </div>
+          <div class="">
+            Supplier self service and process automation that improves accuracy and efficiency
+          </div>
+        </div>
+      </div>
+
+    </div> -->
+    <!-- <div id="es_ms_2" class="es_section es_main_container ">
+      <div class="es_msc es_show" id="es_msc_1">
+        <div id="esm_s1">STAY AHEAD OF THE CURVE</div>
+        <div id="esm_s2" class="es_header_text">
+          <span>Build smart enterprise applications with speed and ease</span>
+        </div>
+        <div id="esm_s3"> Low code and ZERO-FOOTPRINT development platform using modern technology for Oracle Cloud and Oracle EBS</div>
+      </div>
+      <div class="es_msc" id="es_msc_2">
+        <div id="esm_s1">POWERUP YOUR ENTERPRISE
+        </div>
+        <div id="esm_s2" class="es_header_text">
+          <span>Apps that Drive business value
+          </span>
+        </div>
+        <div id="esm_s3"> Pre-built solutions for Oracle EBS to deliver incredible benefits in Business Agility and Process Optimization</div>
+      </div>
+
+    </div>
+
+    <div id="es_section_1" class="es_section">
+      <div class="es_card es_card_white">
+        <div class="es_s1_d1 es_header_text es_text_blue">10X</div>
+        <div class="es_s1_d2 es_header_text">Accelerated development
+        </div>
+        <div class="es_s1_d3">Foster innovation & deliver quality solutions at a rapid pace, respond to changes for increased efficiency
+        </div>
+      </div>
+      <div class="es_card es_card_white">
+        <div class="es_s1_d1 es_header_text es_text_blue">50%
+        </div>
+        <div class="es_s1_d2 es_header_text">Less Cost
+        </div>
+        <div class="es_s1_d3">Significantly reduce time and cost to deliver applications that leverage investment in Enterprise systems
+        </div>
+
+      </div>
+      <div class="es_card es_card_white">
+        <div class="es_s1_d1 es_header_text es_text_blue">5X
+        </div>
+        <div class="es_s1_d2 es_header_text">Transform UX
+        </div>
+        <div class="es_s1_d3">Enhance the user experience to create memorable engagement journeys
+        </div>
+
+      </div>
+    </div>
+
+    <div id="es_section_2" class="es_section es_hide">
+      <div class="es_card es_card_white">
+        <div class="es_header_text es_text_blue es_2_header">
+          Supplier Connect
+        </div>
+        <div class="">
+          Supplier self service and process automation that improves accuracy and efficiency
+        </div>
+      </div>
+      <div class="es_card es_card_white">
+        <div class="es_header_text es_text_blue es_2_header">
+          DataSense
+        </div>
+        <div class="">
+          Supplier self service and process automation that improves accuracy and efficiency
+        </div>
+      </div>
+      <div class="es_card es_card_white">
+        <div class="es_header_text es_text_blue es_2_header">
+          ShipEx
+        </div>
+        <div class="">
+          Supplier self service and process automation that improves accuracy and efficiency
+        </div>
+      </div>
+      <div class="es_card es_card_white">
+        <div class="es_header_text es_text_blue es_2_header">
+          Field Force
+        </div>
+        <div class="">
+          Supplier self service and process automation that improves accuracy and efficiency
+        </div>
+      </div>
+      <div class="es_card es_card_white">
+        <div class="es_header_text es_text_blue es_2_header">
+          Customer Work Center
+        </div>
+        <div class="">
+          Supplier self service and process automation that improves accuracy and efficiency
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="es_section_div"></div> -->
+    <div id="es_section_3" class="es_section">
+      <div class="es_card ">
+        <div class="es_header_text es_text_blue es_section_header">CloudIO Platform </div>
+        <div>With CloudIO, you get a common platform for producing and delivering enterprise applications, reports & dashboards
+          that are actionable, real-time & collaborative across multiple devices. CloudIO empowers business users with rich
+          UX & improved productivity by extending & consolidating existing legacy systems and business data from multiple
+          sources together in one intuitive Platform with a real-time connection, thereby garner a better ROI on existing
+          investments.
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div id="es_section_4" class="es_section">
+      <div class="es_card es_card_white">
+        <div class="es_header_text es_text_blue es_4_header">Inspiring UX</div>
+        <div>Built to deliver the richest experience, intuitive to understand, engaging while using, fluid to fit, render well
+          on any device and is built on the mantra that "Design isn't just a differentiator but plays a role in performance"
+        </div>
+
+      </div>
+      <div class="es_card es_card_white">
+        <div class="es_header_text es_text_blue es_4_header">Multi Source</div>
+        <div>Seamlessly integrate and source data from diverse enterprise and cloud systems as a single source for all business
+          relevant data with an ability to transact with each of the source systems.</div>
+      </div>
+      <div class="es_card es_card_white">
+        <div class="es_header_text es_text_blue es_4_header">Real Time</div>
+        <div>As businesses operate 24/7 and people work on the move, it's of paramount importance to provide data that's new and
+          that's changed into hands of everyone who needs it to make relevant and better decisions based on current information.
+        </div>
+      </div>
+      <div class="es_card es_card_white">
+        <div class="es_header_text es_text_blue es_4_header">Mobility</div>
+        <div> "do-anywhere" and "do-everywhere" Easy access to consume information, manage data, perform job using any device be
+          it at the desk, tablet, smart phone.</div>
+      </div>
+      <div class="es_card es_card_white">
+        <div class="es_header_text es_text_blue es_4_header">Actionable</div>
+        <div>Assimilate, Reorganize, and Present data not only to make decisions but to incent the right action by performing
+          the job functions, makes it insightful and much more powerful.
+        </div>
+      </div>
+      <div class="es_card es_card_white">
+        <div class="es_header_text es_text_blue es_4_header">Collaboration</div>
+        <div>
+          Add context to your data with conversations in real-time. Communicate and Collaborate to share insights, facts, put across
+          opinions and reach new levels of productivity.
+        </div>
+      </div>
+    </div>
+
+    <div class="es_section_div"></div>
+    <div id="es_section_5" class="es_section">
+      <div class="es_header_text es_text_blue es_4_header">Trusted by industry leaders </div>
+      <div>we have a vision to maximize the ROI for all our customers by empowering them to build modern enterprise web applications
+        and mobile applications.</div>
+    </div>
+
+    <div id="es_section_6" class="es_section">
+      Footer
+    </div>
+
+  </div>
+  <script>
+
+
+    var es_slide_1 = document.getElementById('es_slide_1');
+    var es_slide_2 = document.getElementById('es_slide_2');
+
+    var slide_flag = true;
+    function slide2() {
+      setInterval(() => {
+        if (slide_flag) {
+          es_slide_1.classList.add("es_hide");
+          es_slide_2.classList.remove("es_hide");
+        }
+        else {
+          es_slide_2.classList.add("es_hide");
+          es_slide_1.classList.remove("es_hide");
+        }
+        slide_flag = !slide_flag;
+      }, 2000)
+    }
+
+    var pel = document.body;
+    var element = document.getElementById("es_section_4");
+
+    var es_el_1 = document.getElementById("es_section_1");
+    var es_el_2 = document.getElementById("es_section_2");
+
+    var es_msc_1 = document.getElementById("es_msc_1");
+    var es_msc_2 = document.getElementById("es_msc_2");
+    var es_el_flag = true;
+
+    function slide() {
+      setInterval(() => {
+        if (es_el_flag) {
+          es_el_1.classList.add("es_hide");
+          es_el_2.classList.remove("es_hide");
+
+          es_msc_1.classList.remove("es_show");
+          es_msc_2.classList.add("es_show");
+
+          es_el_flag = !es_el_flag;
+        }
+        else {
+          es_el_2.classList.add("es_hide");
+          es_el_1.classList.remove("es_hide");
+
+          es_msc_1.classList.add("es_show");
+          es_msc_2.classList.remove("es_show");
+
+          es_el_flag = !es_el_flag;
+        }
+      }, 5000);
+    }
+    function start() {
+      console.log('**** SP | ', '/', document.documentElement.scrollTop, '/', '/', (element.offsetTop) + '/' + element.offsetHeight);
+    }
+
+
+
+    slide2()
+
+    // slide()
+  </script>
+</body>
+
+</html>

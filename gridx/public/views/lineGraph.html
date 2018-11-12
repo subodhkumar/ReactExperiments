@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body onresize="drawGraph()">
+    <style>
+        body {
+            background: #eee;
+        }
+
+        #graphContainer,
+        #graphContainer2 {
+            width: 50vw;
+            height: 25vh;
+            margin: 20px;
+        }
+
+        #graphContainer3 {
+            width: 25vw;
+            height: 35vh;
+            margin: 20px;
+        }
+
+        #graphContainer4 {
+            width: 50vw;
+            height: 35vh;
+            margin: 20px;
+        }
+
+        #graph1,
+        #graph2,
+        #graph3,
+        #graph4 {
+            background: #fff;
+        }
+    </style>
+    <script>
+        function draw() {
+            var myCanvas = document.getElementById('graph1');
+            var parent = document.getElementById('graphContainer');
+
+            myCanvas.width = parent.offsetWidth * .95;
+            myCanvas.height = parent.offsetHeight * .95;
+
+            var myC = myCanvas.getContext("2d");
+
+            myC.beginPath();
+            myC.lineWidth = 1;
+            myC.strokeStyle = "#e7edeb";
+
+            myC.moveTo(0, myCanvas.height);
+            myC.lineTo(myCanvas.width, myCanvas.height);
+
+            myC.moveTo(0, myCanvas.height * .9);
+            myC.lineTo(myCanvas.width, myCanvas.height * .9);
+
+            myC.moveTo(0, myCanvas.height * .8);
+            myC.lineTo(myCanvas.width, myCanvas.height * .8);
+
+            myC.moveTo(0, myCanvas.height * .7);
+            myC.lineTo(myCanvas.width, myCanvas.height * .7);
+
+            myC.moveTo(0, myCanvas.height * .6);
+            myC.lineTo(myCanvas.width, myCanvas.height * .6);
+
+            myC.moveTo(0, myCanvas.height * .5);
+            myC.lineTo(myCanvas.width, myCanvas.height * .5);
+
+            myC.moveTo(0, myCanvas.height * .4);
+            myC.lineTo(myCanvas.width, myCanvas.height * .4);
+
+            myC.moveTo(0, myCanvas.height * .3);
+            myC.lineTo(myCanvas.width, myCanvas.height * .3);
+
+            myC.moveTo(0, myCanvas.height * .2);
+            myC.lineTo(myCanvas.width, myCanvas.height * .2);
+
+            myC.moveTo(0, myCanvas.height * .1);
+            myC.lineTo(myCanvas.width, myCanvas.height * .1);
+
+            myC.moveTo(0, 0);
+            myC.lineTo(myCanvas.width, 0);
+
+            myC.stroke();
+
+            myC.lineWidth = 5;
+            myC.lineCap = "round";
+            myC.strokeStyle = "#42c3f7";
+
+            myC.beginPath();
+            myC.moveTo(0, myCanvas.height); // Start
+            myC.lineTo(myCanvas.width * .1, myCanvas.height * .7);
+            myC.lineTo(myCanvas.width * .2, myCanvas.height * .8);
+            myC.lineTo(myCanvas.width * .3, myCanvas.height * .65);
+            myC.lineTo(myCanvas.width * .4, myCanvas.height * .55);
+            myC.lineTo(myCanvas.width * .5, myCanvas.height * .35);
+            myC.lineTo(myCanvas.width * .6, myCanvas.height * .45);
+            myC.lineTo(myCanvas.width * .7, myCanvas.height * .25);
+            myC.lineTo(myCanvas.width * .8, myCanvas.height * .2);
+            myC.stroke();
+
+            myC.lineWidth = 5;
+            myC.lineCap = "round";
+            myC.strokeStyle = "#003a6b";
+
+            myC.beginPath();
+            myC.moveTo(0, myCanvas.height); // Start
+            myC.lineTo(myCanvas.width * .1, myCanvas.height * .2);
+            myC.lineTo(myCanvas.width * .2, myCanvas.height * .3);
+            myC.lineTo(myCanvas.width * .3, myCanvas.height * .45);
+            myC.lineTo(myCanvas.width * .4, myCanvas.height * .75);
+            myC.lineTo(myCanvas.width * .5, myCanvas.height * .65);
+            myC.lineTo(myCanvas.width * .6, myCanvas.height * .45);
+            myC.lineTo(myCanvas.width * .7, myCanvas.height * .65);
+            myC.lineTo(myCanvas.width * .8, myCanvas.height * .9);
+            myC.stroke();
+
+        }
+
+        function draw2() {
+
+
+            var myCanvas = document.getElementById('graph2');
+            var parent = document.getElementById('graphContainer2');
+
+            myCanvas.width = parent.offsetWidth * .95;
+            myCanvas.height = parent.offsetHeight * .95;
+
+
+
+            var myC = myCanvas.getContext("2d");
+
+            var grad1 = myC.createLinearGradient(0, 0, 0, myCanvas.height);
+            grad1.addColorStop(0, "#42c3f7");
+            grad1.addColorStop(.15, "#45c3a7");
+            grad1.addColorStop(.75, "#45c3a7");
+            grad1.addColorStop(1, "#003a6b");
+
+            myC.beginPath();
+            myC.lineWidth = 1;
+            myC.strokeStyle = "#e7edeb";
+
+            myC.moveTo(0, myCanvas.height);
+            myC.lineTo(myCanvas.width, myCanvas.height);
+
+            myC.moveTo(0, myCanvas.height * .9);
+            myC.lineTo(myCanvas.width, myCanvas.height * .9);
+
+            myC.moveTo(0, myCanvas.height * .8);
+            myC.lineTo(myCanvas.width, myCanvas.height * .8);
+
+            myC.moveTo(0, myCanvas.height * .7);
+            myC.lineTo(myCanvas.width, myCanvas.height * .7);
+
+            myC.moveTo(0, myCanvas.height * .6);
+            myC.lineTo(myCanvas.width, myCanvas.height * .6);
+
+            myC.moveTo(0, myCanvas.height * .5);
+            myC.lineTo(myCanvas.width, myCanvas.height * .5);
+
+            myC.moveTo(0, myCanvas.height * .4);
+            myC.lineTo(myCanvas.width, myCanvas.height * .4);
+
+            myC.moveTo(0, myCanvas.height * .3);
+            myC.lineTo(myCanvas.width, myCanvas.height * .3);
+
+            myC.moveTo(0, myCanvas.height * .2);
+            myC.lineTo(myCanvas.width, myCanvas.height * .2);
+
+            myC.moveTo(0, myCanvas.height * .1);
+            myC.lineTo(myCanvas.width, myCanvas.height * .1);
+
+            myC.moveTo(0, 0);
+            myC.lineTo(myCanvas.width, 0);
+
+            myC.stroke();
+
+            // #42c3f7
+            // #00a5e9
+            // #003agb
+
+            myC.beginPath();
+
+            myC.fillStyle = grad1;
+            myC.rect(0, myCanvas.height * .5, myCanvas.width * .09, myCanvas.height * .5);//x,y,width,height
+            myC.fill();
+
+            myC.beginPath();
+            myC.rect(myCanvas.width * .1, myCanvas.height * .3, myCanvas.width * .09, myCanvas.height * .7);//x,y,width,height
+
+            myC.fill();
+
+            myC.beginPath();
+            myC.rect(myCanvas.width * .2, myCanvas.height * .2, myCanvas.width * .09, myCanvas.height * .8);//x,y,width,height
+
+            myC.fill();
+            myC.stroke();
+
+            myC.beginPath();
+            myC.rect(myCanvas.width * .3, myCanvas.height * .4, myCanvas.width * .09, myCanvas.height * .6);//x,y,width,height
+
+            myC.fill();
+            myC.stroke();
+
+            myC.beginPath();
+            myC.rect(myCanvas.width * .4, myCanvas.height * .5, myCanvas.width * .09, myCanvas.height * .5);//x,y,width,height
+
+            myC.fill();
+
+            myC.beginPath();
+            myC.rect(myCanvas.width * .5, myCanvas.height * .4, myCanvas.width * .09, myCanvas.height * .6);//x,y,width,height
+
+            myC.fill();
+            myC.stroke();
+
+            myC.beginPath();
+            myC.rect(myCanvas.width * .6, myCanvas.height * .3, myCanvas.width * .09, myCanvas.height * .7);//x,y,width,height
+
+            myC.fill();
+
+            myC.beginPath();
+            myC.rect(myCanvas.width * .7, myCanvas.height * .2, myCanvas.width * .09, myCanvas.height * .8);//x,y,width,height
+
+            myC.fill();
+            myC.stroke();
+
+            myC.beginPath();
+            myC.rect(myCanvas.width * .8, myCanvas.height * .2, myCanvas.width * .09, myCanvas.height * .8);//x,y,width,height
+
+            myC.fill();
+            myC.stroke();
+
+
+            myC.beginPath();
+            myC.rect(myCanvas.width * .9, myCanvas.height * .3, myCanvas.width * .09, myCanvas.height * .7);//x,y,width,height
+
+            myC.fill();
+
+
+
+        }
+
+        function draw3() {
+            var myCanvas = document.getElementById('graph3');
+            var parent = document.getElementById('graphContainer3');
+
+            myCanvas.width = parent.offsetWidth * .95;
+            myCanvas.height = parent.offsetHeight * .95;
+
+            var myC = myCanvas.getContext("2d");
+            myC.lineWidth = 100;
+            myC.strokeStyle = "#ddd";
+            myC.arc(myCanvas.width / 2, myCanvas.height / 2, 100, 0, 2 * Math.PI, false);//x,y,radius,startangle,endangle, false/true
+            myC.stroke();
+
+            myC.beginPath();
+            // myC.lineWidth = 50;
+            myC.strokeStyle = "#003a6b";
+            myC.arc(myCanvas.width / 2, myCanvas.height / 2, 100, 1, 1.2 * Math.PI, false);//x,y,radius,startangle,endangle, false/true
+            myC.stroke();
+
+            myC.beginPath();
+            //myC.lineWidth = 50;
+            myC.strokeStyle = "#42c3f7";
+            myC.arc(myCanvas.width / 2, myCanvas.height / 2, 100, -.25, .7 * Math.PI, false);//x,y,radius,startangle,endangle, false/true
+            myC.stroke();
+
+
+
+        }
+        function draw4() {
+            var myCanvas = document.getElementById('graph4');
+            var parent = document.getElementById('graphContainer4');
+
+            myCanvas.width = parent.offsetWidth * .95;
+            myCanvas.height = parent.offsetHeight * .95;
+
+
+            var myC = myCanvas.getContext("2d");
+
+            var grad1 = myC.createLinearGradient(0, 0, 0, myCanvas.height);
+            grad1.addColorStop(0, "#42c3f7");
+            // grad1.addColorStop(.15, "#45c3a7");
+            // grad1.addColorStop(.75, "#45c3a7");
+            grad1.addColorStop(1, "#003a6b");
+
+
+            myC.beginPath();
+
+            //myC.fillStyle = grad1;
+            myC.fillStyle = "#eee";
+            myC.rect(0, myCanvas.height * .5, myCanvas.width, myCanvas.height * .1);//x,y,width,height
+            myC.fill();
+
+
+            myC.beginPath();
+
+            myC.fillStyle = grad1;
+            myC.rect(0, myCanvas.height * .5, myCanvas.width * .6, myCanvas.height * .1);//x,y,width,height
+            myC.fill();
+
+
+
+
+
+
+        }
+
+        function drawGraph() {
+            draw();
+            draw2();
+            draw3();
+            draw4();
+        }
+        window.onload = drawGraph;
+    </script>
+
+    <div id="graphContainer">
+        <canvas id="graph1"></canvas>
+    </div>
+    <div id="graphContainer2">
+        <canvas id="graph2"></canvas>
+    </div>
+    <div id="graphContainer3">
+        <canvas id="graph3"></canvas>
+    </div>
+    <div id="graphContainer4">
+        <canvas id="graph4"></canvas>
+    </div>
+
+</body>
+
+</html>
