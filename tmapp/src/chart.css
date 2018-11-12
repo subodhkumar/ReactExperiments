@@ -1,0 +1,88 @@
+@keyframes pop {
+  0% {
+    opacity: 0.25;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-s {
+  from {
+    stroke-dashoffset: 200;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animation-l {
+  from {
+    stroke-dashoffset: 1000;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+path.spiral,
+path.progress,
+path.doughnut {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+  animation: animation-s 2s ease-in;
+  font-size: 12px;
+}
+
+path.bar,
+path.curve,
+path.line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: animation-l 2s ease-in;
+  font-size: 12px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.card {
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+#progressChart {
+  grid-column: span 3;
+}
+
+.svgCard {
+  overflow: hidden;
+}
+
+.svgDiv {
+  font-size: 1em;
+}
+
+CurveChart {
+  span: 4;
+}
+
+#progressArc {
+  stroke: 'blueviolet';
+}
+.App {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
